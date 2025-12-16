@@ -71,7 +71,7 @@ try {
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
 
-    $mail->setFrom('ngocanhqb123end@gmail.com', 'Shop ABC');
+    $mail->setFrom('ngocanhqb123end@gmail.com', 'Anhs Fashion');
     $mail->addAddress($email, $name);
 
     $mail->isHTML(true);
@@ -82,7 +82,28 @@ try {
         <p><b>Khách hàng:</b> $name</p>
         <p><b>SĐT:</b> $phone</p>
         <p><b>Địa chỉ:</b> $address</p>
+         <h4>Chi tiết sản phẩm:</h4>
+        <table border='1' cellpadding='5' cellspacing='0'>
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>";
 
+    foreach ($_SESSION['cart'] as $item) {
+        $subtotal = $item['price'] * $item['qty'];
+        $body .= "<tr>
+            <td><img src='{$item['image']}' width='60' height='60'></td>
+            <td>{$item['name']}</td>
+            <td>" . number_format($item['price']) . " đ</td>
+            <td>{$item['qty']}</td>
+            <td>" . number_format($subtotal) . " đ</td>
+        </tr>";
+    }
+
+    $body .= "</table>
         <p><b>Tổng tiền:</b> " . number_format($total) . " đ</p>
         <p>Cảm ơn bạn đã mua hàng!</p>";
 
@@ -92,6 +113,8 @@ try {
     // Nếu gửi mail lỗi vẫn tiếp tục
     error_log("Mail error: {$mail->ErrorInfo}");
 }
+
+
 
 // Xóa giỏ hàng
 unset($_SESSION['cart']);
