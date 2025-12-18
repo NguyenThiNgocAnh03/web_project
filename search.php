@@ -33,6 +33,43 @@ $total  = mysqli_num_rows($result);
     <meta charset="UTF-8">
     <title>Tìm & lọc sản phẩm</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            height: 100%;
+            background: #fff;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            min-height: 40px;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            transition: 0.3s;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,7 +81,7 @@ $total  = mysqli_num_rows($result);
         <p>Có <b><?= $total ?></b> sản phẩm</p>
 
         <!-- ===== FORM ===== -->
-        <form method="POST" class="row" style="margin-bottom:20px">
+        <form method="POST" class="row mb-4">
 
             <div class="col-md-4">
                 <input type="text"
@@ -78,35 +115,51 @@ $total  = mysqli_num_rows($result);
 
         </form>
 
-        <!-- ===== DANH SÁCH ===== -->
+        <!-- ===== DANH SÁCH SẢN PHẨM ===== -->
         <div class="row">
-            <?php if ($total > 0) {
-                while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class="col-md-3">
-                        <div class="thumbnail text-center">
-                            <img src="<?= $row['image'] ?>" class="img-responsive">
-                            <div class="caption">
-                                <h5><?= $row['name'] ?></h5>
-                                <p><?= number_format($row['price']) ?> đ</p>
-                                <a href="detail.php?id=<?= $row['id'] ?>"
-                                    class="btn btn-info btn-sm">
-                                    Chi tiết
-                                </a>
-                                <a href="add-cart.php?id=<?= $row['id'] ?>"
-                                    class="btn btn-success btn-sm">
-                                    Thêm vào giỏ
-                                </a>
-                            </div>
+
+            <?php if ($total > 0): ?>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="product-card">
+
+                            <img src="<?= htmlspecialchars($row['image']) ?>"
+                                alt="<?= htmlspecialchars($row['name']) ?>">
+
+                            <h5 class="product-name">
+                                <?= htmlspecialchars($row['name']) ?>
+                            </h5>
+
+                            <p class="product-price">
+                                <?= number_format($row['price']) ?> đ
+                            </p>
+
+                            <a href="detail.php?id=<?= $row['id'] ?>"
+                                class="btn btn-info btn-sm">
+                                Chi tiết
+                            </a>
+
+                            <a href="add-cart.php?id=<?= $row['id'] ?>"
+                                class="btn btn-success btn-sm">
+                                Thêm vào giỏ
+                            </a>
+
                         </div>
                     </div>
-                <?php }
-            } else { ?>
-                <p style="color:red;font-weight:bold">
-                    Không có sản phẩm phù hợp
-                </p>
-            <?php } ?>
-        </div>
 
+                <?php endwhile; ?>
+            <?php else: ?>
+
+                <div class="col-12">
+                    <p style="color:red;font-weight:bold">
+                        Không có sản phẩm phù hợp
+                    </p>
+                </div>
+
+            <?php endif; ?>
+
+        </div>
     </div>
 
     <?php include("model/footer.php"); ?>

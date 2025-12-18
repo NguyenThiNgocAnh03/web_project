@@ -48,13 +48,12 @@ $total = 0;
                 <td><?= number_format($sub) ?> đ</td>
 
                 <td>
-                <td>
                     <a href="remove-cart.php?id=<?= $item['id'] ?>"
                         onclick="return confirm('Xóa sản phẩm này?');"
                         class="btn btn-xs btn-danger">
                         Xóa
                     </a>
-                </td>
+
 
                 </td>
             </tr>
