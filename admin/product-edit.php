@@ -3,27 +3,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./dist/css/sb-admin-2.css">
     <link rel="stylesheet" href="./dist/css/timeline.css">
-    <link rel="stylesheet" href="./dist/js/sb-admin-2.js"><?php
-                                                            require_once("../model/header.php");
-                                                            require_once("../model/connect.php");
-                                                            error_reporting(2);
+    <link rel="stylesheet" href="./dist/js/sb-admin-2.js">
+    <?php
+    require_once("../model/header.php");
+    require_once("../model/connect.php");
+    error_reporting(2);
 
-                                                            // Chỉnh sửa sản phẩm
-                                                            if (isset($_GET['idProduct'])) {
-                                                                if (isset($_GET['es'])) {
-                                                                    echo "<script type=\"text/javascript\">alert(\"Bạn đã sửa sản phẩm thành công!\");</script>";
-                                                                }
-                                                                if (isset($_GET['ef'])) {
-                                                                    echo "<script type=\"text/javascript\">alert(\"Sửa sản phẩm thất bại!\");</script>";
-                                                                }
-                                                            }
+    // Chỉnh sửa sản phẩm
+    if (isset($_GET['idProduct'])) {
+        if (isset($_GET['es'])) {
+            echo "<script type=\"text/javascript\">alert(\"Bạn đã sửa sản phẩm thành công!\");</script>";
+        }
+        if (isset($_GET['ef'])) {
+            echo "<script type=\"text/javascript\">alert(\"Sửa sản phẩm thất bại!\");</script>";
+        }
+    }
 
 
-                                                            if (isset($_GET['idProduct'])) {
-                                                                $idProduct = $_GET['idProduct'];
-                                                                $sql = "SELECT * FROM products WHERE id  = " . $idProduct;
-                                                                $result = mysqli_query($conn, $sql);
-                                                            ?>
+    if (isset($_GET['idProduct'])) {
+        $idProduct = $_GET['idProduct'];
+        $sql = "SELECT * FROM products WHERE id  = " . $idProduct;
+        $result = mysqli_query($conn, $sql);
+    ?>
 
         <!-- Page Content -->
         <div id="page-wrapper">
@@ -36,9 +37,9 @@
 
                     <div class="col-lg-7" style="padding-bottom:120px">
                         <?php
-                                                                if ($result) {
-                                                                    while ($row = mysqli_fetch_assoc($result)) {
-                                                                        $thumImage = "../" . $row['image'];
+                        if ($result) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $thumImage = "../" . $row['image'];
                         ?>
                                 <form action="productedit-back.php?idProduct=<?php echo $row['id']; ?>" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">
@@ -51,23 +52,23 @@
                                         <label> Danh mục sản phẩm </label>
                                         <select class="form-control" name="category">
                                             <?php
-                                                                        $idCategory = $row['category_id'];
-                                                                        $sqlCategory = "SELECT * FROM categories WHERE id = $idCategory";
-                                                                        $resCategory = mysqli_query($conn, $sqlCategory);
-                                                                        while ($rowCa = mysqli_fetch_assoc($resCategory)) {
+                                            $idCategory = $row['category_id'];
+                                            $sqlCategory = "SELECT * FROM categories WHERE id = $idCategory";
+                                            $resCategory = mysqli_query($conn, $sqlCategory);
+                                            while ($rowCa = mysqli_fetch_assoc($resCategory)) {
                                             ?>
                                                 <option value="<?php echo $rowCa['id']; ?>"><?php echo $rowCa['name']; ?></option>
 
                                             <?php
-                                                                        }
+                                            }
 
-                                                                        $sqlCate = "SELECT * FROM categories";
-                                                                        $resCate = mysqli_query($conn, $sqlCate);
-                                                                        while ($rowCate = mysqli_fetch_assoc($resCate)) {
+                                            $sqlCate = "SELECT * FROM categories";
+                                            $resCate = mysqli_query($conn, $sqlCate);
+                                            while ($rowCate = mysqli_fetch_assoc($resCate)) {
                                             ?>
                                                 <option value="<?php echo $rowCate['id']; ?>"><?php echo $rowCate['name']; ?></option>
                                             <?php
-                                                                        }
+                                            }
                                             ?>
                                         </select>
                                     </div>
@@ -118,8 +119,8 @@
                                     <div class="form-group">
                                         <label> Tình trạng sản phẩm </label>
                                         <?php
-                                                                        // status = 0 còn hàng, 1 hết hàng
-                                                                        if ($row['status'] == 0) {
+                                        // status = 0 còn hàng, 1 hết hàng
+                                        if ($row['status'] == 0) {
                                         ?>
                                             <label class="radio-inline">
                                                 <input name="status" value="0" type="radio" checked=""> Còn hàng
@@ -128,7 +129,7 @@
                                                 <input name="status" value="1" id="hide" type="radio"> Hết hàng
                                             </label>
                                         <?php
-                                                                        } else {
+                                        } else {
                                         ?>
                                             <label class="radio-inline">
                                                 <input name="status" value="0" type="radio"> Còn hàng
@@ -137,14 +138,14 @@
                                                 <input name="status" value="1" id="hide" type="radio" checked=""> Hết hàng
                                             </label>
                                         <?php
-                                                                        }
+                                        }
                                         ?>
                                     </div>
                                     <!-- //Tình trạng đơn hàng -->
                         <?php
-                                                                    }
-                                                                }
-                                                            }
+                            }
+                        }
+                    }
                         ?>
                         <button type="submit" name="editProduct" class="btn btn-warning btn-lg">Chỉnh sửa sản phẩm</button>
                                 </form>

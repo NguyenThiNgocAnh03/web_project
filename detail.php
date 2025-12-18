@@ -73,7 +73,7 @@
                                         $gia = $row['price'] - ($row['price'] / 100);
                                     ?>
                                         <p class="price">Giá cũ: <?php echo $row['price']; ?><sup>đ</sup></p>
-                                        <p class="price">Giá giảm còn: <?php echo $gia; ?><sup>đ</sup></p>
+                                        <p class="price">Giá giảm còn: <?php echo $gia - ($gia * ($row['saleprice'] / 100)); ?><sup>đ</sup></p>
                                     <?php
                                     } else {
                                     ?>
