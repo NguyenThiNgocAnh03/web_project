@@ -22,7 +22,7 @@ if (isset($_GET['rf'])) {
 
 <head>
 	<meta charset="UTF-8">
-	<title>MyLiShop Fashion</title>
+	<title>Anh's courses</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="images/logohong.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -59,87 +59,10 @@ if (isset($_GET['rf'])) {
 		<div class="container">
 			<!-- Logo -->
 			<div class="title">
-				<a href="../index.php" title="MyLiShop"> <img src="../images/logohong.png" width="260px;" height="180px;"> </a>
+				<a href="../index.php" title="Anh's Courses"> <img src="../images/logo.png" width="260px;" height="180px;"> </a>
 			</div>
 			<!-- /logo -->
-			<div class="col-sm-12 col-md-12 account">
-				<div class="row">
-					<?php
-					if (isset($_SESSION['username'])) {
-					?>
-						<i class="fa fa-user fa-lg"></i>
-						<span><?php echo $_SESSION['username'] ?></span> &nbsp;
-						<span><i class="fa fa-sign-out"></i><a href="user/logout.php"> Đăng xuất </a></span>
-					<?php   } else {
-					?>
-						<i class="fa fa-user fa-lg"></i>
-						<a href="login.php"> Đăng nhập </a> &nbsp;
-						<i class="fa fa-users fa-lg"></i>
-						<a href="register.php"> Đăng ký </a>
-					<?php
-					}
-					?>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-
-			<!-- Menu -->
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-						<!-- <a class="navbar-brand" href="#">MyLiShop</a> -->
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li><a href="../index.php">Trang Chủ</a>
-							</li>
-							<li><a href="../introduceshop.php">Dịch Vụ</a>
-							</li>
-							<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b class="fa fa-caret-down"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="../fashionboy.php"><i class="fa fa-caret-right"></i> Thời Trang Nam</a>
-									</li>
-									<li class="divider"></li>
-									<li><a href="../fashiongirl.php"><i class="fa fa-caret-right"></i> Thời Trang Nữ</a>
-									</li>
-									<li class="divider"></li>
-									<li><a href="../newproduct.php"><i class="fa fa-caret-right"></i> Hàng Mới Về</a>
-									</li>
-								</ul>
-							</li>
-							<li><a href="../lienhe.php">Liên Hệ</a>
-							</li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<form role="search" action="/search">
-								<div class="input-group header-search">
-									<input type="text" maxlength="50" name="query" id="searchs" class="form-control" placeholder="Nhập từ khóa..." style="font-size: 14px;">
-									<span class="input-group-btn">
-										<button class="btn btn-default btn-search" type="submit"><span class="fa fa-search"></span>
-										</button>
-									</span>
-								</div>
-								<!-- /input-group -->
-								<div class="cart-total">
-									<a class="bg_cart" href="/cart" title="Giỏ hàng">
-										<button type="button" class="btn header-cart"><span class="fa fa-shopping-cart"></span> &nbsp;<span id="cart-total">0</span> sản phẩm</button>
-									</a>
-									<div class="mini-cart-content shopping_cart">
-
-									</div>
-								</div>
-							</form>
-						</ul>
-					</div>
-					<!-- /.navbar-collapse -->
-				</div>
-				<!-- /.container-fluid -->
-			</nav>
 		</div>
-		<!-- /Menu ngang header -->
 	</header>
 	<!-- /header -->
 
@@ -152,7 +75,11 @@ if (isset($_GET['rf'])) {
 						<center>
 							<h4><strong> ĐĂNG NHẬP VÀO TÀI KHOẢN </strong></h4>
 						</center>
-						<p style="color: red;"><?php echo $error; ?></p>
+						<p style="color: red; font-weight: bold;">
+							<?php echo $error; ?>
+						</p>
+
+
 					</div><!-- /panel-heading -->
 
 					<div class="panel-body">

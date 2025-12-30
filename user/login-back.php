@@ -39,13 +39,6 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
-    $to = "anh.nguyen27@student.passerellesnumeriques.org";
-    $subject = "inform degister success";
-    $txt = "Chúc mừng bạn $username đã đăng ký thành công!";
-    $headers = "From:ngocanhqb123end@gmail.com" . "\r\n" .
-
-        mail($to, $subject, $txt, $headers);
-
     /* ================== 3️⃣ SAI HẾT ================== */
     $_SESSION['error'] = 'Tên đăng nhập hoặc mật khẩu không hợp lệ!';
     header("Location: ../user/login.php?error=wrong");

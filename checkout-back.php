@@ -71,7 +71,7 @@ try {
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
 
-    $mail->setFrom('ngocanhqb123end@gmail.com', 'Anhs Fashion');
+    $mail->setFrom('ngocanhqb123end@gmail.com', 'Anhs Courses');
     $mail->addAddress($email, $name);
 
     $mail->isHTML(true);

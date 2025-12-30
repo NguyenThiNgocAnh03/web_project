@@ -9,18 +9,23 @@ require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 
 if (isset($_POST['submit'])) {
-    $fullname = $_POST['fullname'];
-    $username = $_POST['username'];
-    $password = md5($_POST['password']); // dùng MD5
-    $email    = $_POST['email'];
-    $phone    = $_POST['phone'];
-    $address  = $_POST['address'];
+    $fullname = (trim($_POST['fullname']));
+    $username = (trim($_POST['username']));
+    $password = md5(trim($_POST['password'])); // dùng MD5
+    $email    = (trim($_POST['email']));
+    $phone    = trim($_POST['phone']);
+    $address  = trim($_POST['address']);
 
     // Kiểm tra username hoặc email đã tồn tại chưa
     $check = $conn->prepare("SELECT id FROM users WHERE username=? OR email=?");
     $check->bind_param("ss", $username, $email);
     $check->execute();
     $check->store_result();
+    if ($check->num_rows > 0) {
+        header("Location: register.php?error=exists");
+        exit();
+    }
+    $check->close();
 
 
     // Lưu thông tin user vào database
@@ -39,15 +44,15 @@ if (isset($_POST['submit'])) {
             $mail->SMTPSecure = 'ssl';
             $mail->Port       = 465;
 
-            $mail->setFrom('ngocanhqb123end@gmail.com', 'Anhs Fashion');
+            $mail->setFrom('ngocanhqb123end@gmail.com', 'Anhs Courses');
             $mail->addAddress($email, $username);
 
             $mail->isHTML(true);
             $mail->Subject = 'Welcome to Anhs Fashion';
             $mail->Body = "
                 <h3>Xin chào <b>$username</b>,</h3>
-                <p>Bạn đã đăng ký tài khoản thành công tại <b>Anhs Fashion</b>.</p>
-                <p>Bạn có thể đăng nhập và trải nghiệm mua sắm ngay bây giờ.</p>
+                <p>Bạn đã đăng ký tài khoản thành công tại <b>Anhs Courses</b>.</p>
+                <p>Bạn có thể đăng nhập và trải nghiệm các khóa học ngay bây giờ.</p>
             ";
 
             $mail->send();

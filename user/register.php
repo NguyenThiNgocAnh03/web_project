@@ -1,10 +1,11 @@
 <?php require_once('../model/connect.php'); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>MyLiShop Fashion</title>
+    <title>Anh's Courses</title>
     <link rel="icon" type="image/png" href="../images/logohong.png">
-    <meta name="viewport" content = "width=device-width, initial-scale =1">
+    <meta name="viewport" content="width=device-width, initial-scale =1">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="My đẹp trai">
@@ -21,6 +22,7 @@
     <!-- Bootstrap Custom CSS -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -28,7 +30,9 @@
                 <div class="panel panel-danger register">
                     <!-- panel heading -->
                     <div class="panel-heading">
-                        <center><h4><strong> ĐĂNG KÝ TÀI KHOẢN </strong></h4></center>
+                        <center>
+                            <h4><strong> ĐĂNG KÝ TÀI KHOẢN </strong></h4>
+                        </center>
                     </div><!-- /panel heading -->
 
                     <form action="register-back.php" method="POST" name="myForm" onsubmit="return validateForm();">
@@ -60,8 +64,8 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-phone fa-lg"></span></span>
-                                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength ="9" maxlength="11" 
-                                            class="form-control" name="phone" placeholder="Nhập số điện thoại của bạn" required />
+                                            <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="9" maxlength="11"
+                                                class="form-control" name="phone" placeholder="Nhập số điện thoại của bạn" required />
                                         </div>
                                     </div><!-- /form-group -->
 
@@ -108,7 +112,7 @@
                     <!-- panel-footer -->
                     <div class="panel-footer ">
                         <center>
-                            <img src="../images/logohong.png" width="230px;" height="110px;">
+                            <img src="../images/logo.png" width="230px;" height="110px;">
                         </center>
                     </div><!-- /panel-footer -->
 
@@ -117,4 +121,5 @@
         </div><!-- /row -->
     </div><!-- /container -->
 </body>
+
 </html>

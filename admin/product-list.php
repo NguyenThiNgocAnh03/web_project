@@ -16,7 +16,7 @@
 <body>
     <?php
     // include 'header.php';
-    require_once('../model/header.php');
+
     // require_once("../model/connect.php");
     require_once('../model/connect.php');
     error_reporting(2);
@@ -46,82 +46,104 @@ alert(\"Thêm sản phẩm thất bại!\");
 </script>";
     }
     ?>
+    <div class="logo-box text-center">
+        <a href="index.php" title="Anh's Fashion">
+            <img src="<?= BASE_URL ?>images/logo.png" width="260px;" height="180px;" alt="Anh's Shop logo - fashion e-commerce store">
+            <div class="logo-text">
+                <p style="
+                margin-top:8px;
+                font-size:28px;
+                font-weight:bold;
+                letter-spacing:2px;
+                font-family:'Times New Roman', serif;
+                color: #3ba5a1;
+                text-transform:uppercase;
+            ">
+                    Anh’s Courses
+                </p>
 
-    <!-- page content -->
-    <div id=" page-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="product-list.php">Danh sách sản phẩm </a>
-                        </li>
-                        <li><a href="update_status.php">Quản lý đơn hàng </a>
-                        </li>
-                    </ul>
-                </div>
-                <table class=" table table-striped table-bordered table-hover" id="dataTables-example">
-                    <thead>
-                        <tr align="center">
-                            <th> STT </th>
-                            <th> Tên sản phẩm </th>
-                            <th> Mã danh mục </th>
-                            <th> Hình ảnh </th>
-                            <th> Giá </th>
-                            <th> Giảm giá </th>
-                            <th> Chỉnh sửa </th>
-                            <th> Xóa </th>
-                            <th>Thêm sản phẩm</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $sql = "SELECT * FROM products ORDER BY id DESC";
-                        $result = mysqli_query($conn, $sql);
+            </div>
+        </a>
+        <!-- page content -->
+        <div id=" page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="product-list.php">
+                                    <h3 class="section-title">Danh sách sản phẩm</h3>
+                                </a>
+                            </li>
+                            <li><a href="update_status.php">
+                                    <h3 class="section-title">Quản lý đơn hàng</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                if ($row['image'] == null || $row['image'] == '') {
-                                    $thumbImage = "";
-                                } else {
-                                    $thumbImage = "../" . $row['image'];
+                    <table class=" table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                            <tr align="center">
+                                <th> STT </th>
+                                <th> Tên sản phẩm </th>
+                                <th> Mã danh mục </th>
+                                <th> Hình ảnh </th>
+                                <th> Giá </th>
+                                <th> Giảm giá </th>
+                                <th> Chỉnh sửa </th>
+                                <th> Xóa </th>
+                                <th>Thêm sản phẩm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $sql = "SELECT * FROM products ORDER BY id DESC";
+                            $result = mysqli_query($conn, $sql);
+
+                            if ($result) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    if ($row['image'] == null || $row['image'] == '') {
+                                        $thumbImage = "";
+                                    } else {
+                                        $thumbImage = "../" . $row['image'];
+                                    }
+                            ?>
+                                    <tr class="odd gradeX" align="center">
+                                        <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo $row['name']; ?></td>
+                                        <td><?php echo $row['category_id']; ?></td>
+                                        <td>
+                                            <img src="<?php echo $thumbImage; ?>" width="100px" ; height="100px" ;>
+                                        </td>
+                                        <td><?php echo $row['price']; ?></td>
+                                        <td><?php echo $row['saleprice']; ?></td>
+
+                                        <td class="center">
+                                            <p><a href="product-edit.php?idProduct=<?php echo $row['id']; ?>"><i
+                                                        class="fa fa-pencil fa-lg" title="Chỉnh sửa">
+                                                    </i><button> Chỉnh sửa</button></a>
+                                            </p>
+                                        </td>
+
+                                        <td class="center">
+                                            <p><a href="product-delete.php?idProducts=<?php echo $row['id']; ?>"><i
+                                                        class="fa fa-trash-o fa-lg" title="Xóa"></i><button> Xóa</button></a>
+                                            </p>
+                                        </td>
+                                        <td class="center">
+                                            <p><a href="product-add.php"><i class="fa fa-plus fa-lg" title="Thêm sản phẩm">
+                                                    </i><button> Thêm sản phẩm</button></a>
+                                            </p>
+                                    </tr>
+                            <?php
                                 }
-                        ?>
-                                <tr class="odd gradeX" align="center">
-                                    <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['name']; ?></td>
-                                    <td><?php echo $row['category_id']; ?></td>
-                                    <td>
-                                        <img src="<?php echo $thumbImage; ?>" width="100px" ; height="100px" ;>
-                                    </td>
-                                    <td><?php echo $row['price']; ?></td>
-                                    <td><?php echo $row['saleprice']; ?></td>
-
-                                    <td class="center">
-                                        <p><a href="product-edit.php?idProduct=<?php echo $row['id']; ?>"><i
-                                                    class="fa fa-pencil fa-lg" title="Chỉnh sửa">
-                                                </i><button> Chỉnh sửa</button></a>
-                                        </p>
-                                    </td>
-
-                                    <td class="center">
-                                        <p><a href="product-delete.php?idProducts=<?php echo $row['id']; ?>"><i
-                                                    class="fa fa-trash-o fa-lg" title="Xóa"></i><button> Xóa</button></a>
-                                        </p>
-                                    </td>
-                                    <td class="center">
-                                        <p><a href="product-add.php"><i class="fa fa-plus fa-lg" title="Thêm sản phẩm">
-                                                </i><button> Thêm sản phẩm</button></a>
-                                        </p>
-                                </tr>
-                        <?php
                             }
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div><!-- /#page-wrapper -->
+                            ?>
+                        </tbody>
+                    </table>
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div><!-- /#page-wrapper -->
 </body>
 
 </html>

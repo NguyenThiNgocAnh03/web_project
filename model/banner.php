@@ -2,7 +2,7 @@
     <div class="banner wow lightSpeedIn">
         <div class="row">
             <?php
-            echo "<h3 class='title text-center'>BANNER- PNV 27</h3>";
+            echo "<h3 class='title text-center'>NỔI BẬT</h3>";
             require_once("connect.php");
             $sql = "SELECT image FROM slides WHERE status=2";
             $result = mysqli_query($conn, $sql);

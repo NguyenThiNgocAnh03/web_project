@@ -10,17 +10,15 @@ $result = mysqli_query($conn, "
 $statusText = [
     0 => 'Đã đặt hàng',
     1 => 'Đang xử lý',
-    2 => 'Đang giao hàng',
-    3 => 'Đã nhận hàng',
-    4 => 'Đã hủy'
+    2 => 'Thành công',
+    3 => 'Đã hủy'
 ];
 
 $statusClass = [
     0 => 'label label-default',
     1 => 'label label-info',
-    2 => 'label label-warning',
-    3 => 'label label-success',
-    4 => 'label label-danger'
+    2 => 'label label-success',
+    3 => 'label label-danger'
 ];
 ?>
 

@@ -12,7 +12,7 @@ if (isset($_SESSION['cart'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Anh's Fashion</title>
+    <title>Anh's Courses</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="title" content="Fashion MyLiShop - fashion mylishop" />
     <meta name="description" content="Fashion MyLiShop - fashion mylishop" />
@@ -70,7 +70,7 @@ if (isset($_SESSION['cart'])) {
                     <div class="product-main">
                         <!-- sản phẩm mới -->
                         <div class="title-product-main">
-                            <h3 class="section-title">Sản phẩm mới</h3>
+                            <h3 class="section-title">Kỹ Năng Mềm</h3>
                         </div>
                         <div class="content-product-main">
                             <div class="row">
@@ -115,7 +115,7 @@ if (isset($_SESSION['cart'])) {
 
                         <!-- Thời Trang Nam -->
                         <div class="title-product-main">
-                            <h3 class="section-title">Thời Trang Nam</h3>
+                            <h3 class="section-title">Công Nghệ Thông Tin</h3>
                         </div>
                         <div class="content-product-main">
                             <div class="row">
@@ -140,7 +140,7 @@ if (isset($_SESSION['cart'])) {
                                             <div class="product-info">
                                                 <a href="add-cart.php?id=<?php echo $kq['id']; ?>">
                                                     <button type="button" class="btn btn-primary">
-                                                        <label style="color: red;">&hearts;</label> Mua hàng <label
+                                                        <label style="color: red;">&hearts;</label> Thêm vào giỏ hàng<label
                                                             style="color: red;">&hearts;</label>
                                                     </button>
                                                 </a>
@@ -159,7 +159,7 @@ if (isset($_SESSION['cart'])) {
 
                         <!-- Thời Trang Nữ -->
                         <div class="title-product-main">
-                            <h3 class="section-title">Thời Trang Nữ</h3>
+                            <h3 class="section-title">Tiếng Anh</h3>
                         </div>
                         <div class="content-product-main">
                             <div class="row">
@@ -185,7 +185,7 @@ if (isset($_SESSION['cart'])) {
                                             <div class="product-info">
                                                 <a href="add-cart.php?id=<?php echo $kq['id']; ?>">
                                                     <button type="button" class="btn btn-primary">
-                                                        <label style="color: red;">&hearts;</label> Mua hàng <label
+                                                        <label style="color: red;">&hearts;</label> Thêm vào giỏ hàng <label
                                                             style="color: red;">&hearts;</label>
                                                     </button>
                                                 </a>

@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "fashion_mylishop";
+$database = "Anh_course";
 // Create connection
 $conn = mysqli_connect($host, $user, $password, $database);
 mysqli_set_charset($conn, 'UTF8');

@@ -11,7 +11,7 @@
                 <div class="col-md-2 col-sm-4 col-xs-6 text-center">
                     <div class="thumbnail">
                         <div class="hoverimage1">
-                            <img src="<?php echo str_replace('../', '', $kq['image']); ?>" alt="..." width="100%" height="200">
+                            <img src="<?php echo str_replace('../', '', $kq['image']); ?>" alt="..." width="100%" height="160">
                         </div>
                     </div>
                 </div>

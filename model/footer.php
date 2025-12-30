@@ -5,8 +5,8 @@
             <!--About-->
             <div class="col-md-3  footer_block footer_block__1 wow rotateInUpLeft  rotateInUpLeft" style="visibility: visible;">
                 <div class="footer_contacts">
-                    <h2 style="color: #fbdd12;">Giới thiệu</h2>
-                    <p style="line-height: 28px; color: #ffffff !important;">Ra đời từ năm 2017, chỉ từ một cửa hàng thời trang nhỏ, đến nay <span style="font-weight: bold; color: #fbdd12;">Anh's fashion</span> đã không ngừng phát triển và trở thành một hệ thống cửa hàng chuyên kinh doanh thời trang trẻ, là một trong những thương hiệu thời trang hàng đầu tại Đà Nẵng.</p>
+                    <h2 style="color: aquamarine;">Giới thiệu</h2>
+                    <p style="line-height: 28px; color: #ffffff !important;">Ra đời từ năm 2017, chỉ từ một lớp học nhỏ, đến nay <span style="font-weight: bold; color: aquamarine;">Anh's courses</span> đã không ngừng phát triển và trở thành một hệ thống cung cấp các khoá học chất lượng và hiệu quả, là một trong những trang web có độ uy tín cao tại Đà Nẵng.</p>
                     <p style="margin: 12px 0px 2px;"><span>Mọi phản ánh xin liên hệ:</span></p>
                     SĐT: 0799.169.436<br>
                     Email: ngocanh@gmail.com<br>
@@ -17,7 +17,7 @@
             <!--Links-->
             <div class="col-md-3  footer_block footer_block__1 wow rotateInUpLeft rotateInUpLeft" style="visibility: visible;">
                 <div class="footer_contacts">
-                    <h2 style="color: #fbdd12;">Dịch vụ khách hàng</h2>
+                    <h2 style="color: aquamarine;">Dịch vụ khách hàng</h2>
                     <ul class="">
                         <li class="wow rotateInUpLeft" style="visibility: visible;"> <a href="#">Cơ chế đặt hàng trực tuyến</a></li>
 
@@ -37,7 +37,7 @@
             <!--Contact Info-->
             <div class="col-md-3  footer_block footer_block__1 wow rotateInUpLeft rotateInUpLeft" style="visibility: visible;">
                 <div class="footer_contacts">
-                    <h2 style="color: #fbdd12;">Liên hệ</h2>
+                    <h2 style="color: aquamarine;">Liên hệ</h2>
                     <ul class="">
                         <li class="wow rotateInUpLeft" style="visibility: visible;"><span>Trụ sở:</span> 99 Tô Hiến Thành, Sơn Trà, Đà Nẵng</li>
                         <li class="wow rotateInUpLeft" style="visibility: visible;"><span>Email:</span> ngocanh@gmail.com</li>
@@ -53,7 +53,7 @@
             <!--Branch-->
             <div class="col-md-3  footer_block footer_block__1 wow rotateInUpLeft" style="visibility: visible;">
                 <div class="footer_contacts">
-                    <h2 style="color: #fbdd12;">Chi nhánh</h2>
+                    <h2 style="color: aquamarine;">Chi nhánh</h2>
                     <!--<a href="https://www.google.com/maps/d/edit?mid=zmEknIlzD6Bw.kYF507S0UObw&usp=sharing"  target="_blank"><i class="fa fa-globe"></i></a>-->
                     <ul id="scroll_box">
                         <span>Đà Nẵng:</span>
@@ -72,7 +72,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
-                        <p role="contentinfo">Anh's fashion.com.vn © 2017. All Rights Reserved.</p><!-- Design by MyLiShop -->
+                        <p role="contentinfo">Anh's courses.com.vn © 2017. All Rights Reserved.</p><!-- Design by MyLiShop -->
                     </div>
                 </div>
             </div>

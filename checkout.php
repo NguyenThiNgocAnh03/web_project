@@ -65,15 +65,9 @@ foreach ($_SESSION['cart'] as $item) {
                 <label>Số điện thoại</label>
                 <input type="text" name="phone" class="form-control" required>
             </div>
-
-            <div class="form-group">
-                <label>Địa chỉ giao hàng</label>
-                <textarea name="address" class="form-control" required></textarea>
-            </div>
             <div class="form-group">
                 <label>Phương thức thanh toán</label>
                 <select name="payment_method" class="form-control" required>
-                    <option value="cod">Thanh toán khi nhận hàng (COD)</option>
                     <option value="bank">Chuyển khoản ngân hàng</option>
                 </select>
             </div>

@@ -6,7 +6,9 @@
 	max-width: 100%;
 	max-height: 0 auto;
 	background-color: #fff;
-}
+
+}.container .panel-heading {
+    background-color: aquamarine;   }
 
 /*images for background*/
 #bg {
@@ -21,7 +23,7 @@
 /* header-top */
 .header_top {
 	max-width: 100%;
-	background-color: #ff0000;
+	background-color:aquamarine;
 	color: #fff;
 	font-size: 14px;
 }
@@ -36,11 +38,12 @@
 }
 
 .header_top_right a:hover{
-	color: #0f0;
+	color: rgb(157, 51, 169);
 }
 
 /* logo */
 .title {
+    color: aquamarine;
 	max-width: 100%;
 	text-align: center;
 	border-bottom: 1px solid #717171;
@@ -61,7 +64,7 @@
 }
 
 .account a:hover {
-	color: #fbdd12;
+	color:aquamarine;
 }
 
 .account .fa {
@@ -73,17 +76,19 @@
 }
 
 .register .panel-heading h4 {
-    color: #000;
-    background-color: #f2dede;
-    border-color: #f2dede;
+    color:#cf0a1a;
+    background-color: aquamarine;
+    border-color: aquamarine;
     font-size: 20px;
 }
+
 
 .register .panel-heading {
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    background-color: aquamarine;
 }
 
 .register .panel-heading {
@@ -99,6 +104,7 @@
 /* menu cấp 1*/
 .navbar {
 	margin-top: 20px;
+    background-color: aquamarine;
 }
 
 .collapse ul.nav li a,
@@ -108,14 +114,14 @@
 }
 
 .collapse ul.nav li a:hover {
-	border-top: 1px solid #fbdd12;
-	color: #fbdd12;
+	border-top: 1px solid aquamarine;
+	color: #cf0a1a;
 }
 
 /* menu cấp 2*/
 .dropdown ul.dropdown-menu li a:hover {
-	border-left: 1px solid #fbdd12;
-	color: #fbdd12;
+	border-left: 1px solid #74d3d0;
+	color: #cf0a1a;
 	background-color: #fff;
 }
 
@@ -131,7 +137,7 @@
 }
 .btn-search:hover {
 	color: #fff;
-	background-color: #fbdd12;
+	background-color: #cf0a1a;
 }
 .bg_cart {
 	float: right;
@@ -142,10 +148,11 @@
 	background-color: #fbdd12;
 	color: #000;
 	font-size: 14px;
+    border-color: red;
 }
 .header-cart:hover {
 	color: #fff;
-	background-color: #fbdd12;
+	background-color: #cf0a1a;
 }
 
 
@@ -170,7 +177,7 @@
 .product-main .title-product-main {
     text-transform: uppercase;
     border-bottom: 1px solid #f2f2f2;
-    color: #fbdd12;
+    color: aquamarine;
 }
 
 .content-product-main {
@@ -185,7 +192,7 @@
     font-size: 30px;
     line-height: 70px;
     color: #ffffff;
-    background-color: #fbdd12;
+    background-color: aquamarine;
     padding: 0 30px;
     display: inline-block;
     position: relative;
@@ -207,7 +214,7 @@
     width: 0;
     height: 0;
     position: absolute;
-    border-bottom: 35px solid #fbdd12;
+    border-bottom: 35px solid aquamarine;
     border-right: 15px solid transparent;
     content: "";
     right: -15px;
@@ -260,17 +267,17 @@
     font-size: 18px;
 }
 .product-info .btn:hover {
-    border-color: #fbdd12;
-    color: #fbdd12;
+    border-color: aquamarine;
+    color: aquamarine;
 }
 .product-info button a:hover {
-    color: #fbdd12;
+    color: aquamarine;
 }
 
 /* Giá sản phẩm */
 .price {
     font-size: 16px;
-    color: #0606F9;
+    color: #e72942;
     font-weight: bold;
 }
 .name-product {
@@ -313,7 +320,7 @@ ul {
 }
 .footer_contacts span {
     font-size: 16px;
-    color: #fbdd12;
+    color: aquamarine;
 }
 /* copyright */
 footer .copyright {
@@ -330,7 +337,7 @@ footer .copyright p {
 
 /* Liên hệ */
 .titles {
-    color: #f00;
+    color: aquamarine;
     text-align: center;
 }
 
@@ -345,7 +352,7 @@ footer .copyright p {
 }
 
 .btn {
-    background-color: #fbdd12;
+    background-color: aquamarine;
     color: #000;
     font-weight: bold;
 }
@@ -378,10 +385,10 @@ fieldset {
 }
 
 .update-view button {
-    background-color: #fbdd12;
+    background-color: aquamarine;
     padding: 10px;
     border-radius: 5%;
-    border: #fbdd12;
+    border: aquamarine;
     float: left;
     margin-right: 20px;
 }
@@ -396,7 +403,7 @@ fieldset {
 }
 
 .title_left {
-    background-color: #fbdd12;
+    background-color: aquamarine;
     padding: 10px;
     font-size: 20px;
     text-align: center;
@@ -437,9 +444,9 @@ fieldset {
 }
 
 .info-customer, .thanhtoan button {
-    background-color: #fbdd12;
+    background-color: aquamarine;
     color: #1503FC;
-    border: #fbdd12;
+    border: aquamarine;
     box-shadow: 2px 2px 20px rgba(158, 158, 158, 0.59);
     margin-bottom: 50px;
     margin-left: 155px;
@@ -447,7 +454,7 @@ fieldset {
 
 .info-customer, .thanhtoan button:hover {
     color: #fff;
-    background-color: #fbdd12;
+    background-color: aquamarine;
 }
 
 .thanhtoan button {
@@ -469,7 +476,7 @@ fieldset {
 .show-infor button {
     padding-left: 30px;
     padding-right: 30px;
-    background-color: #fbdd12;
+    background-color: aquamarine;
     color: #1503FC;
 }
 
@@ -503,26 +510,78 @@ fieldset {
 .site-logo img {
     display: inline-block;
 }
-.filter-price-box {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 6px;
-    border: 1px solid #eee;
-    margin-bottom: 20px;
+/* NAV RIGHT ALIGN */
+.navbar-nav.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.filter-price-box h4 {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #e74c3c;
-    text-align: center;
+/* SEARCH + FILTER */
+.search-filter-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.filter-price-box label {
-    font-size: 14px;
+/* SEARCH */
+.header-search {
+    display: flex;
+}
+.header-search input {
+    width: 240px;
+    height: 38px;
+    border-radius: 20px 0 0 20px;
+}
+.btn-search {
+    border-radius: 0 20px 20px 0;
 }
 
-.filter-price-box button {
-    margin-top: 10px;
-    font-weight: bold;
+/* FILTER */
+.filter-price-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
+.filter-price-inline input {
+    width: 100px;
+    height: 38px;
+    border-radius: 8px;
+}
+.filter-price-inline button {
+    border-radius: 20px;
+}
+ .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            height: 100%;
+            background: #fff;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            min-height: 40px;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            transition: 0.3s;
+        }

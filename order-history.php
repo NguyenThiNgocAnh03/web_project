@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION['id-user'])) {
+    header("Location: user/login.php");
+    exit();
+}
+
 require_once('model/connect.php');
 
 $user_id = $_SESSION['id-user'];
@@ -11,12 +16,11 @@ WHERE user_id = $user_id
 ORDER BY date_order DESC
 ");
 ?>
-
 <h2>Lịch sử mua hàng</h2>
 
 <?php if (isset($_GET['success'])): ?>
     <div class="alert alert-success">
-        Đặt hàng thành công!
+        Mua khóa học thành công!
     </div>
 <?php endif; ?>
 

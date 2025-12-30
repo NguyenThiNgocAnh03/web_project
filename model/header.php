@@ -1,6 +1,11 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 error_reporting(E_ALL ^ E_DEPRECATED);
 require_once('connect.php');
+
 $prd = 0;
 if (isset($_SESSION['cart'])) {
     $prd = count($_SESSION['cart']);
@@ -35,7 +40,7 @@ if (isset($_GET['ls'])) {
     <div class="container">
         <!-- Logo -->
         <div class="logo-box text-center">
-            <a href="index.php" title="Anh's Fashion">
+            <a href="index.php" title="Anh's Courses">
                 <img src="<?= BASE_URL ?>images/logo.png" width="260px;" height="180px;" alt="Anh's Shop logo - fashion e-commerce store">
                 <div class="logo-text">
                     <p style="
@@ -44,10 +49,10 @@ if (isset($_GET['ls'])) {
                 font-weight:bold;
                 letter-spacing:2px;
                 font-family:'Times New Roman', serif;
-                color:#111;
+                color: #3ba5a1;
                 text-transform:uppercase;
             ">
-                        Anh’s Fashion
+                        Anh’s Courses
                     </p>
 
                 </div>
@@ -94,16 +99,16 @@ if (isset($_GET['ls'])) {
                         </li>
                         <li><a href="introduceshop.php"> Dịch Vụ </a>
                         </li>
-                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm <b
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Khoá học <b
                                     class="fa fa-caret-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="fashionboy.php"><i class="fa fa-caret-right"></i> Thời Trang Nam</a>
+                                <li><a href="congnghethongtin.php"><i class="fa fa-caret-right"></i> Công Nghệ Thông Tin</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="fashiongirl.php"><i class="fa fa-caret-right"></i> Thời Trang Nữ</a>
+                                <li><a href="tienganh.php"><i class="fa fa-caret-right"></i> Tiếng Anh</a>
                                 </li>
                                 <li class="divider"></li>
-                                <li><a href="newproduct.php"><i class="fa fa-caret-right"></i> Hàng Mới Về</a>
+                                <li><a href="kynangmem.php"><i class="fa fa-caret-right"></i> Kỹ Năng Mềm</a>
                                 </li>
                             </ul>
                         </li>
@@ -116,48 +121,35 @@ if (isset($_GET['ls'])) {
                     </ul>
                     <!-- search area -->
                     <ul class="nav navbar-nav navbar-right">
-                        <form role="search" action="search.php" method="POST" class="navbar-form navbar-right">
 
-                            <!-- SEARCH -->
-                            <div class="input-group header-search">
-                                <input type="text"
-                                    maxlength="50"
-                                    name="search"
-                                    class="form-control"
-                                    placeholder="Nhập từ khóa..."
-                                    style="font-size:14px;">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default btn-search" type="submit">
-                                        <span class="fa fa-search"></span>
-                                    </button>
-                                </span>
-                            </div>
+                        <li>
+                            <form role="search" action="search.php" method="POST" class="navbar-form">
 
-                            <!-- FILTER PRICE -->
-                            <div class="filter-price-box" style="margin-top:10px;width:260px;">
-                                <h4 style="font-size:14px;font-weight:bold;">LỌC THEO GIÁ</h4>
+                                <div class="search-filter-wrap">
 
-                                <div class="form-group">
-                                    <input type="number"
-                                        name="min_price"
-                                        class="form-control"
-                                        placeholder="Giá từ">
+                                    <!-- SEARCH -->
+                                    <div class="header-search">
+                                        <input type="text"
+                                            name="search"
+                                            class="form-control"
+                                            placeholder="Nhập từ khóa...">
+                                        <button class="btn btn-default btn-search" type="submit">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </div>
+
+                                    <!-- FILTER -->
+                                    <div class="filter-price-inline">
+                                        <input type="number" name="min_price" class="form-control" placeholder="Giá từ">
+                                        <span>-</span>
+                                        <input type="number" name="max_price" class="form-control" placeholder="Giá đến">
+                                        <button type="submit" class="btn btn-danger btn-sm">Lọc</button>
+                                    </div>
+
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="number"
-                                        name="max_price"
-                                        class="form-control"
-                                        placeholder="Giá đến">
-                                </div>
-
-                                <button type="submit" class="btn btn-danger btn-block btn-sm">
-                                    Lọc sản phẩm
-                                </button>
-                            </div>
-
-                        </form>
-
+                            </form>
+                        </li>
                         <!-- /input-group -->
                         <div class="cart-total">
                             <a class="bg_cart" href="view-cart.php" title="Giỏ hàng">

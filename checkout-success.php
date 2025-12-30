@@ -20,7 +20,7 @@ if (!isset($_SESSION['username'])) {
     <div class="container" style="margin-top:50px;">
         <div class="alert alert-success text-center">
             <h3> Đặt hàng thành công!</h3>
-            <p>Cảm ơn bạn đã mua sắm tại <b>Anh’s Fashion</b>.</p>
+            <p>Cảm ơn bạn đã mua sắm tại <b>Anh’s Courses</b>.</p>
             <a href="index.php" class="btn btn-primary">Tiếp tục mua hàng</a>
             <a href="order-history.php" class="btn btn-info">Xem đơn hàng</a>
         </div>

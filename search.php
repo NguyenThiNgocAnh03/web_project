@@ -33,43 +33,8 @@ $total  = mysqli_num_rows($result);
     <meta charset="UTF-8">
     <title>Tìm & lọc sản phẩm</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <style>
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            height: 100%;
-            background: #fff;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .product-name {
-            font-size: 14px;
-            min-height: 40px;
-            margin-top: 10px;
-        }
-
-        .product-price {
-            color: red;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-3px);
-            transition: 0.3s;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
@@ -90,76 +55,78 @@ $total  = mysqli_num_rows($result);
                     class="form-control"
                     placeholder="Tên sản phẩm">
             </div>
+    </div>
 
-            <div class="col-md-3">
-                <input type="number"
-                    name="min_price"
-                    value="<?= $min ?>"
-                    class="form-control"
-                    placeholder="Giá từ">
-            </div>
 
-            <div class="col-md-3">
-                <input type="number"
-                    name="max_price"
-                    value="<?= $max ?>"
-                    class="form-control"
-                    placeholder="Giá đến">
-            </div>
+    <div class="col-md-3">
+        <input type="number"
+            name="min_price"
+            value="<?= $min ?>"
+            class="form-control"
+            placeholder="Giá từ">
+    </div>
 
-            <div class="col-md-2">
-                <button class="btn btn-primary btn-block">
-                    Lọc
-                </button>
-            </div>
+    <div class="col-md-3">
+        <input type="number"
+            name="max_price"
+            value="<?= $max ?>"
+            class="form-control"
+            placeholder="Giá đến">
+    </div>
 
-        </form>
+    <div class="col-md-2">
+        <button class="btn btn-primary btn-block">
+            Lọc
+        </button>
+    </div>
 
-        <!-- ===== DANH SÁCH SẢN PHẨM ===== -->
-        <div class="row">
+    </form>
 
-            <?php if ($total > 0): ?>
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+    <!-- ===== DANH SÁCH SẢN PHẨM ===== -->
+    <div class="row">
 
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <div class="product-card">
+        <?php if ($total > 0): ?>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
 
-                            <img src="<?= htmlspecialchars($row['image']) ?>"
-                                alt="<?= htmlspecialchars($row['name']) ?>">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
 
-                            <h5 class="product-name">
-                                <?= htmlspecialchars($row['name']) ?>
-                            </h5>
+                        <img src="<?= htmlspecialchars($row['image']) ?>"
+                            alt="<?= htmlspecialchars($row['name']) ?>">
 
-                            <p class="product-price">
-                                <?= number_format($row['price']) ?> đ
-                            </p>
+                        <h5 class="product-name">
+                            <?= htmlspecialchars($row['name']) ?>
+                        </h5>
 
-                            <a href="detail.php?id=<?= $row['id'] ?>"
-                                class="btn btn-info btn-sm">
-                                Chi tiết
-                            </a>
+                        <p class="product-price">
+                            <?= number_format($row['price']) ?> đ
+                        </p>
 
-                            <a href="add-cart.php?id=<?= $row['id'] ?>"
-                                class="btn btn-success btn-sm">
-                                Thêm vào giỏ
-                            </a>
+                        <a href="detail.php?id=<?= $row['id'] ?>"
+                            class="btn btn-info btn-sm">
+                            Chi tiết
+                        </a>
 
-                        </div>
+                        <a href="add-cart.php?id=<?= $row['id'] ?>"
+                            class="btn btn-success btn-sm">
+                            Thêm vào giỏ
+                        </a>
+
                     </div>
-
-                <?php endwhile; ?>
-            <?php else: ?>
-
-                <div class="col-12">
-                    <p style="color:red;font-weight:bold">
-                        Không có sản phẩm phù hợp
-                    </p>
                 </div>
 
-            <?php endif; ?>
+            <?php endwhile; ?>
+        <?php else: ?>
 
-        </div>
+            <div class="col-12">
+                <p style="color:red;font-weight:bold">
+                    Không có sản phẩm phù hợp
+                </p>
+            </div>
+
+        <?php endif; ?>
+
+    </div>
     </div>
 
     <?php include("model/footer.php"); ?>
